@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
-import 'package:theme/widgets/box.left.dart';
-import 'package:theme/widgets/box.left.profil.dart';
-import 'package:theme/widgets/text.dart';
 
 class PageViewScreen extends StatelessWidget {
   const PageViewScreen({
@@ -32,35 +29,20 @@ class PageViewScreen extends StatelessWidget {
                   fit: BoxFit.fitHeight,
                   alignment: Alignment.bottomCenter),
             )),
-        const Positioned(
-          right: 5,
-          bottom: 100,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              BoxLeftProfil(
-                profilUrl:
-                    'https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2021/08/les-dernieres-inventions-futuristes-elon-musk.jpg',
-              ),
-              BoxLeft(icon: HeroIcons.heart, text: '10K'),
-              BoxLeft(icon: HeroIcons.chatBubbleOvalLeftEllipsis, text: '10K'),
-              BoxLeft(icon: HeroIcons.paperAirplane, text: '10K'),
-            ],
+        Positioned(
+          top: 50,
+          left: 20,
+          child: Container(
+            padding: const EdgeInsets.all(5),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                gradient: const LinearGradient(
+                    colors: [Colors.amber, Colors.pink],
+                    transform: GradientRotation(2))),
+            child: const HeroIcon(HeroIcons.bars3CenterLeft,
+                color: Colors.white, size: 30),
           ),
-        ),
-        const Positioned(
-            bottom: 40,
-            left: 20,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                TextMoy(text: '@JaneFisher'),
-                SizedBox(height: 10),
-                TextSmall(text: 'Locked inhouse together... TikTok'),
-                SizedBox(height: 5),
-                TextSmall(text: 'time #flyp #quaratine'),
-              ],
-            ))
+        )
       ]),
     );
   }

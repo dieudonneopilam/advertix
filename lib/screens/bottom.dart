@@ -25,21 +25,12 @@ class BottomNavigationBarPage extends StatelessWidget {
             inactiveColor: Colors.grey,
             border: Border.all(color: Colors.black),
             items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
               BottomNavigationBarItem(
-                  icon: HeroIcon(HeroIcons.magnifyingGlass), label: 'search'),
+                  icon: HeroIcon(HeroIcons.bookmarkSquare),
+                  label: 'Porte feuille'),
+              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Accueil'),
               BottomNavigationBarItem(
-                  icon: HeroIcon(
-                    HeroIcons.plusCircle,
-                    style: HeroIconStyle.solid,
-                    size: 50,
-                  ),
-                  label: ''),
-              BottomNavigationBarItem(
-                  icon: HeroIcon(HeroIcons.chatBubbleBottomCenter),
-                  label: 'inbox'),
-              BottomNavigationBarItem(
-                  icon: HeroIcon(HeroIcons.user), label: 'Me')
+                  icon: HeroIcon(HeroIcons.user), label: 'Profile')
             ],
           ),
         );
