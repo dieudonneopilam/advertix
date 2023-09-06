@@ -18,15 +18,10 @@ class OnBordingPage extends StatelessWidget {
             children: [
               const SizedBox(height: 100),
               DelayedWidget(
-                  delay: 1000,
-                  child: Container(
-                    height: 60,
-                    width: 60,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        gradient: const LinearGradient(
-                            colors: [Colors.amber, Colors.pink, Colors.blue],
-                            transform: GradientRotation(2))),
+                  delay: 1200,
+                  child: Image.asset(
+                    'assets/img/logo.png',
+                    height: 200,
                   )),
               const SizedBox(height: 10),
               const DelayedWidget(
@@ -39,7 +34,7 @@ class OnBordingPage extends StatelessWidget {
               DelayedWidget(
                 delay: 2000,
                 child: GestureDetector(
-                  onTap: () => context.goNamed('home'),
+                  onTap: () => context.goNamed('login'),
                   child: Container(
                     margin: const EdgeInsets.symmetric(horizontal: 50),
                     alignment: Alignment.center,

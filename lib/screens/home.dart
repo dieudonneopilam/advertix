@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:theme/widgets/drawer.dart';
 import 'package:theme/widgets/pageview.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,6 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const DrawerApp(),
       body: PageView(
         scrollDirection: Axis.vertical,
         children: const [

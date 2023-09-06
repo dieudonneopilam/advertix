@@ -32,15 +32,18 @@ class PageViewScreen extends StatelessWidget {
         Positioned(
           top: 50,
           left: 20,
-          child: Container(
-            padding: const EdgeInsets.all(5),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                gradient: const LinearGradient(
-                    colors: [Colors.amber, Colors.pink],
-                    transform: GradientRotation(2))),
-            child: const HeroIcon(HeroIcons.bars3CenterLeft,
-                color: Colors.white, size: 30),
+          child: GestureDetector(
+            onTap: () => Scaffold.of(context).openDrawer(),
+            child: Container(
+              padding: const EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  gradient: const LinearGradient(
+                      colors: [Colors.amber, Colors.pink],
+                      transform: GradientRotation(2))),
+              child: const HeroIcon(HeroIcons.bars3CenterLeft,
+                  color: Colors.white, size: 30),
+            ),
           ),
         )
       ]),
