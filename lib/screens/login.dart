@@ -24,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {
             const BoxContainerLoginTitle(),
             const SizedBox(height: 10),
             SizedBox(
-              height: 500,
+              height: 450,
               width: double.infinity,
               child: BlocConsumer<LoginSelectBloc, LoginSelectState>(
                 listener: (context, state) {
