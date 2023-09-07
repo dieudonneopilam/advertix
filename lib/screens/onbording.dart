@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:theme/widgets/deleyaed.dart';
 
 class OnBordingPage extends StatelessWidget {
@@ -24,11 +25,11 @@ class OnBordingPage extends StatelessWidget {
                     height: 200,
                   )),
               const SizedBox(height: 10),
-              const DelayedWidget(
+              DelayedWidget(
                 delay: 1500,
                 child: Text('Advertix',
-                    style:
-                        TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
+                    style: GoogleFonts.poppins(
+                        fontSize: 40, fontWeight: FontWeight.w600)),
               ),
               const SizedBox(height: 50),
               DelayedWidget(

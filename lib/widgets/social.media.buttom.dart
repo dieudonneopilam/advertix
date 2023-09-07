@@ -26,7 +26,7 @@ class SocialMediaButtom extends StatelessWidget {
         children: [
           Icon(iconData, color: colorIcon),
           const SizedBox(height: 5),
-          TextMoy(text: title, color: Colors.black)
+          TextMoy(text: title, color: Colors.black),
         ],
       ),
     );
