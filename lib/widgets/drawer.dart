@@ -42,14 +42,14 @@ class DrawerApp extends StatelessWidget {
                       : Colors.white,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 0),
+              const ListTileDrawerTheme(
+                  iconLeft: Icons.cloud, title: 'Thème', isTheme: true),
               const ListTileDrawer(
-                  iconLeft: Icons.settings, title: 'Parametres'),
+                  iconLeft: Icons.settings, title: 'Paramètres'),
               const ListTileDrawer(
                   iconLeft: Icons.lock_person,
                   title: 'Conditions de confidentialité'),
-              const ListTileDrawerTheme(
-                  iconLeft: Icons.cloud, title: 'Thème', isTheme: true),
               const ListTileDrawer(
                   iconLeft: Icons.share, title: 'Partager l\'application'),
               const ListTileDrawer(

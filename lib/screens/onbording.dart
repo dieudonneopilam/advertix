@@ -18,14 +18,14 @@ class OnBordingPage extends StatelessWidget {
             children: [
               const SizedBox(height: 100),
               DelayedWidget(
-                  delay: 1200,
+                  delay: 700,
                   child: Image.asset(
                     'assets/img/logo.png',
                     height: 200,
                   )),
               const SizedBox(height: 10),
               const DelayedWidget(
-                delay: 1300,
+                delay: 1500,
                 child: Text('Advertix',
                     style:
                         TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
@@ -53,7 +53,7 @@ class OnBordingPage extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 100),
               const DelayedWidget(
                 delay: 2500,
                 child: Text('From',
@@ -64,7 +64,7 @@ class OnBordingPage extends StatelessWidget {
                 child: Text('STRAR-TECH GROUP',
                     style: TextStyle(fontSize: 20, color: Colors.grey)),
               ),
-              const SizedBox(height: 100),
+              const SizedBox(height: 50),
             ],
           ),
         ),
