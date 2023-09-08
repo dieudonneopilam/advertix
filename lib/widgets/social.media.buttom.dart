@@ -17,16 +17,16 @@ class SocialMediaButtom extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      height: 80,
+      height: 60,
       width: MediaQuery.sizeOf(context).width * 0.40,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10), color: Colors.white),
-      child: Column(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(iconData, color: colorIcon),
-          const SizedBox(height: 5),
-          TextMoy(text: title, color: Colors.black),
+          Icon(iconData, color: colorIcon, size: 30),
+          const SizedBox(width: 5),
+          TextSmall(text: title, color: Colors.black),
         ],
       ),
     );

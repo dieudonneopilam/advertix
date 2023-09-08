@@ -28,7 +28,7 @@ class OnBordingPage extends StatelessWidget {
               DelayedWidget(
                 delay: 1500,
                 child: Text('Advertix',
-                    style: GoogleFonts.poppins(
+                    style: GoogleFonts.karla(
                         fontSize: 40, fontWeight: FontWeight.w600)),
               ),
               const SizedBox(height: 50),
@@ -42,28 +42,29 @@ class OnBordingPage extends StatelessWidget {
                     height: 60,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                          colors: [Colors.pink, Colors.amber]),
+                      gradient: const LinearGradient(colors: [
+                        Colors.blue,
+                        Color.fromARGB(255, 51, 86, 146)
+                      ], transform: GradientRotation(3)),
                       borderRadius: BorderRadius.circular(50),
                     ),
-                    child: const Text(
-                      'GET STRATED',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    child: Text(
+                      'COMMENCER',
+                      style: GoogleFonts.poppins(
+                          fontSize: 25, color: Colors.white),
                     ),
                   ),
                 ),
               ),
-              const SizedBox(height: 100),
-              const DelayedWidget(
+              const SizedBox(height: 30),
+              DelayedWidget(
                 delay: 2500,
-                child: Text('From',
-                    style: TextStyle(fontSize: 20, color: Colors.grey)),
+                child: Text('From', style: GoogleFonts.poppins(fontSize: 20)),
               ),
-              const DelayedWidget(
+              DelayedWidget(
                 delay: 2800,
-                child: Text('STRAR-TECH GROUP',
-                    style: TextStyle(fontSize: 20, color: Colors.grey)),
+                child: Text('Star-Tech Group',
+                    style: GoogleFonts.poppins(fontSize: 20)),
               ),
               const SizedBox(height: 50),
             ],

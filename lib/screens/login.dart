@@ -16,38 +16,39 @@ class _LoginPageState extends State<LoginPage> {
   PageController pageController = PageController(initialPage: 0);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 239, 239, 239),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const BoxContainerLoginTitle(),
-            const SizedBox(height: 10),
-            SizedBox(
-              height: 450,
-              width: double.infinity,
-              child: BlocConsumer<LoginSelectBloc, LoginSelectState>(
-                listener: (context, state) {
-                  (state as LoginSelectInitial);
-                  pageController.animateToPage(state.index,
-                      duration: const Duration(milliseconds: 500),
-                      curve: Curves.decelerate);
-                },
-                builder: (context, state) {
-                  (state as LoginSelectInitial);
-                  return PageView(
+    return BlocConsumer<LoginSelectBloc, LoginSelectState>(
+      listener: (context, state) {
+        (state as LoginSelectInitial);
+        pageController.animateToPage(state.index,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.decelerate);
+      },
+      builder: (context, state) {
+        (state as LoginSelectInitial);
+
+        return Scaffold(
+          backgroundColor: const Color.fromARGB(255, 239, 239, 239),
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                const BoxContainerLoginTitle(),
+                const SizedBox(height: 10),
+                SizedBox(
+                  height: 600,
+                  width: double.infinity,
+                  child: PageView(
                     onPageChanged: (value) => context
                         .read<LoginSelectBloc>()
                         .add(OnSwitch(index: value)),
                     controller: pageController,
                     children: const [LoginPageWidget(), SignUpPageWidget()],
-                  );
-                },
-              ),
-            )
-          ],
-        ),
-      ),
+                  ),
+                )
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }

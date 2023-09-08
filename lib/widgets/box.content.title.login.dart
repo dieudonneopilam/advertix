@@ -25,12 +25,12 @@ class BoxContainerLoginTitle extends StatelessWidget {
                 height: 180,
                 width: double.infinity,
                 decoration: const BoxDecoration(
-                    gradient:
-                        LinearGradient(colors: [Colors.pink, Colors.amber]),
+                    gradient: LinearGradient(
+                        colors: [Colors.blue, Colors.blueAccent]),
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(50),
                         bottomRight: Radius.circular(50))),
-                child: const TextLarge(text: 'Advertix', size: 30),
+                child: const TextLarge(text: 'advertix', size: 30),
               ),
               Positioned(
                 bottom: 0,
@@ -56,8 +56,10 @@ class BoxContainerLoginTitle extends StatelessWidget {
                           padding: const EdgeInsets.all(2),
                           decoration: BoxDecoration(
                               gradient: LinearGradient(colors: [
-                                state.index == 0 ? Colors.pink : Colors.white,
-                                state.index == 0 ? Colors.amber : Colors.white
+                                state.index == 0 ? Colors.blue : Colors.white,
+                                state.index == 0
+                                    ? Colors.blueAccent
+                                    : Colors.white
                               ]),
                               borderRadius: BorderRadius.circular(50)),
                           child: TextMoy(
@@ -80,8 +82,10 @@ class BoxContainerLoginTitle extends StatelessWidget {
                           padding: const EdgeInsets.all(2),
                           decoration: BoxDecoration(
                               gradient: LinearGradient(colors: [
-                                state.index == 1 ? Colors.pink : Colors.white,
-                                state.index == 1 ? Colors.amber : Colors.white
+                                state.index == 1 ? Colors.blue : Colors.white,
+                                state.index == 1
+                                    ? Colors.blueAccent
+                                    : Colors.white
                               ]),
                               borderRadius: BorderRadius.circular(50)),
                           child: TextMoy(
