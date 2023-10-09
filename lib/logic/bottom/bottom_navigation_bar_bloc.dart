@@ -7,7 +7,7 @@ part 'bottom_navigation_bar_state.dart';
 class BottomNavigationBarBloc
     extends Bloc<BottomNavigationBarEvent, BottomNavigationBarState> {
   BottomNavigationBarBloc()
-      : super(const BottomNavigationBarInitial(index: 0)) {
+      : super(const BottomNavigationBarInitial(index: 2)) {
     on<OnChanged>((event, emit) {
       emit(BottomNavigationBarInitial(index: event.index));
     });

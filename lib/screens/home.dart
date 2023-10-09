@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:theme/widgets/drawer.dart';
-import 'package:theme/widgets/pageview.dart';
+import 'package:flutter/widgets.dart';
+
+import '../widgets/drawer.dart';
+import '../widgets/pageview.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

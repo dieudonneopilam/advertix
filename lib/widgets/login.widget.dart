@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
+import 'package:theme/constants/enum.dart';
+import 'package:theme/logic/current.user/current_user_bloc.dart';
+import 'package:theme/logic/login/login_bloc.dart';
 import 'package:theme/logic/password.field/password_field_bloc.dart';
 import 'package:theme/widgets/buttom.container.dart';
 import 'package:theme/widgets/field.normal.dart';
@@ -9,23 +11,44 @@ import 'package:theme/widgets/text.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginPageWidget extends StatelessWidget {
-  const LoginPageWidget({super.key});
-
+  const LoginPageWidget(
+      {super.key,
+      required this.emailController,
+      required this.passwordController});
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const TextFielNormal(hintText: 'Email'),
+        BlocBuilder<LoginBloc, LoginState>(
+          builder: (context, state) {
+            (state as LoginInitial);
+            return TextFielNormal(
+              ismail: true,
+              controller: emailController,
+              hintText: 'Email',
+              etatField: state.etatemail,
+            );
+          },
+        ),
         const SizedBox(height: 5),
         BlocBuilder<PasswordFieldBloc, PasswordFieldState>(
           builder: (context, state) {
             (state as PasswordFieldInitial);
-            return TextFielNormal(
-              hintText: 'Mot de passe',
-              isPasword: true,
-              statebscureText: state.isOpen1,
-              onObscure: () =>
-                  context.read<PasswordFieldBloc>().add(ToggleFiel1()),
+            return BlocBuilder<LoginBloc, LoginState>(
+              builder: (context, stateEtat) {
+                (stateEtat as LoginInitial);
+                return TextFielNormal(
+                  controller: passwordController,
+                  hintText: 'Mot de passe',
+                  isPasword: true,
+                  statebscureText: state.isOpen1,
+                  onObscure: () =>
+                      context.read<PasswordFieldBloc>().add(ToggleFiel1()),
+                  etatField: stateEtat.etatpassword,
+                );
+              },
             );
           },
         ),
@@ -39,9 +62,27 @@ class LoginPageWidget extends StatelessWidget {
                   text: 'Mot de passe oublié ?', color: Colors.blue),
             )),
         const SizedBox(height: 10),
-        ButtomSimple(
-          title: 'Se connecter',
-          onTap: () => context.goNamed('paiement'),
+        BlocBuilder<CurrentUserBloc, CurrentUserState>(
+          builder: (context, state) {
+            return BlocBuilder<LoginBloc, LoginState>(
+              builder: (context, state) {
+                (state as LoginInitial);
+                return ButtomSimple(
+                  title: 'Se connecter',
+                  onTap: () {
+                    if (state.etatRequest != EtatRequest.loading) {
+                      context.read<LoginBloc>().add(ValidationEmailPassword(
+                            email: emailController.text,
+                            password: passwordController.text,
+                            context: context,
+                          ));
+                    }
+                  },
+                  etatRequest: state.etatRequest,
+                );
+              },
+            );
+          },
         ),
         const SizedBox(height: 20),
         const TextMoy(text: 'Ou se connecter avec', color: Colors.black),

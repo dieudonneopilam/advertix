@@ -21,19 +21,21 @@ class TextSmall extends StatelessWidget {
 }
 
 class TextMoy extends StatelessWidget {
-  const TextMoy({
-    super.key,
-    required this.text,
-    this.color = Colors.white,
-    this.size = 20,
-  });
+  const TextMoy(
+      {super.key,
+      required this.text,
+      this.color = Colors.white,
+      this.size = 20,
+      this.textAlign = TextAlign.left});
   final String text;
   final Color color;
   final double size;
+  final TextAlign textAlign;
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
+      textAlign: textAlign,
       style: GoogleFonts.poppins(
           fontSize: size, color: color, fontWeight: FontWeight.w500),
     );

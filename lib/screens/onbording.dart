@@ -2,9 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:theme/widgets/deleyaed.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class OnBordingPage extends StatelessWidget {
+class OnBordingPage extends StatefulWidget {
   const OnBordingPage({super.key});
+
+  @override
+  State<OnBordingPage> createState() => _OnBordingPageState();
+}
+
+class _OnBordingPageState extends State<OnBordingPage> {
+  late SharedPreferences prefs;
+  @override
+  void initState() {
+    pref();
+    super.initState();
+  }
+
+  void pref() async {
+    prefs = await SharedPreferences.getInstance();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,17 +52,19 @@ class OnBordingPage extends StatelessWidget {
               DelayedWidget(
                 delay: 2000,
                 child: GestureDetector(
-                  onTap: () => context.goNamed('login'),
+                  onTap: () async {
+                    context.goNamed('login');
+                    await prefs.setBool('used', true);
+                  },
                   child: Container(
                     margin: const EdgeInsets.symmetric(horizontal: 50),
                     alignment: Alignment.center,
                     height: 60,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      gradient: const LinearGradient(colors: [
-                        Colors.blue,
-                        Color.fromARGB(255, 51, 86, 146)
-                      ], transform: GradientRotation(3)),
+                      gradient: const LinearGradient(
+                          colors: [Colors.amber, Colors.pink],
+                          transform: GradientRotation(3)),
                       borderRadius: BorderRadius.circular(50),
                     ),
                     child: Text(
@@ -66,7 +85,7 @@ class OnBordingPage extends StatelessWidget {
                 child: Text('Star-Tech Group',
                     style: GoogleFonts.poppins(fontSize: 20)),
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 150),
             ],
           ),
         ),

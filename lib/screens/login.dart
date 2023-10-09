@@ -14,6 +14,14 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   PageController pageController = PageController(initialPage: 0);
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController nomController = TextEditingController();
+  TextEditingController prenomController = TextEditingController();
+  TextEditingController postnomController = TextEditingController();
+  TextEditingController password2Controller = TextEditingController();
+  TextEditingController confirmedController = TextEditingController();
+  TextEditingController email2Controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LoginSelectBloc, LoginSelectState>(
@@ -34,14 +42,26 @@ class _LoginPageState extends State<LoginPage> {
                 const BoxContainerLoginTitle(),
                 const SizedBox(height: 10),
                 SizedBox(
-                  height: 600,
+                  height: 700,
                   width: double.infinity,
                   child: PageView(
                     onPageChanged: (value) => context
                         .read<LoginSelectBloc>()
                         .add(OnSwitch(index: value)),
                     controller: pageController,
-                    children: const [LoginPageWidget(), SignUpPageWidget()],
+                    children: [
+                      LoginPageWidget(
+                        emailController: emailController,
+                        passwordController: passwordController,
+                      ),
+                      SignUpPageWidget(
+                        confirmedController: confirmedController,
+                        email2Controller: email2Controller,
+                        nomController: nomController,
+                        password2Controller: password2Controller,
+                        prenomController: prenomController,
+                      )
+                    ],
                   ),
                 )
               ],

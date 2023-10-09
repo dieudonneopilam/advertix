@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
 
-class PageViewScreen extends StatelessWidget {
+class PageViewScreen extends StatefulWidget {
   const PageViewScreen({
     super.key,
     required this.urlimage,
@@ -11,24 +11,30 @@ class PageViewScreen extends StatelessWidget {
   final String profilUrl;
 
   @override
+  State<PageViewScreen> createState() => _PageViewScreenState();
+}
+
+class _PageViewScreenState extends State<PageViewScreen> {
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: double.infinity,
       width: double.infinity,
       child: Stack(children: [
         Container(
-            margin: const EdgeInsets.only(top: 0),
-            width: double.infinity,
-            height: double.infinity,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              image: DecorationImage(
-                  image: NetworkImage(
-                    urlimage,
-                  ),
-                  fit: BoxFit.fitHeight,
-                  alignment: Alignment.bottomCenter),
-            )),
+          margin: const EdgeInsets.only(top: 0),
+          width: double.infinity,
+          height: double.infinity,
+          decoration: BoxDecoration(
+            color: Colors.black,
+            image: DecorationImage(
+                image: NetworkImage(
+                  widget.urlimage,
+                ),
+                fit: BoxFit.fitHeight,
+                alignment: Alignment.bottomCenter),
+          ),
+        ),
         Positioned(
           top: 50,
           left: 20,
