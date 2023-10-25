@@ -30,7 +30,7 @@ class BoxContainerLoginTitle extends StatelessWidget {
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(50),
                         bottomRight: Radius.circular(50))),
-                child: const TextLarge(text: 'advertix', size: 30),
+                child: const TextLarge(text: 'Advertix', size: 30),
               ),
               Positioned(
                 bottom: 0,

@@ -51,7 +51,7 @@ class ParametrePage extends StatelessWidget {
                     children: [
                       HeroIcon(HeroIcons.lockClosed),
                       SizedBox(width: 10),
-                      TextMoy(text: 'Conditions de confidentialite', color: Colors.blue, size: 18),
+                      TextMoy(text: 'Conditions de confidentialité', color: Colors.blue, size: 18),
                     ],
                   ),
                 ],

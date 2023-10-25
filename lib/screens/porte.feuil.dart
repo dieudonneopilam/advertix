@@ -33,7 +33,7 @@ class PorteFeuilPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TextLarge(text: '\$ 282 100'),
-                  TextSmall(text: 'Balance Total')
+                  TextSmall(text: 'Balance Totale')
                 ],
               ),
             ),
@@ -93,7 +93,7 @@ class PorteFeuilPage extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.all(20),
               child: TextMoy(
-                  text: 'Historique des conversions et transferts',
+                  text: 'Historiques des conversions et transferts',
                   size: 17,
                   color: Colors.black),
             ),

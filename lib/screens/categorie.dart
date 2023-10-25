@@ -23,7 +23,6 @@ class _CategoriePageState extends State<CategoriePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -43,8 +42,7 @@ class _CategoriePageState extends State<CategoriePage> {
                       ),
                       const CircleAvatar(
                         radius: 20,
-                        backgroundImage: AssetImage(
-                            'assets/img/logo.png'),
+                        backgroundImage: AssetImage('assets/img/logo.png'),
                       )
                     ],
                   ),
@@ -53,7 +51,7 @@ class _CategoriePageState extends State<CategoriePage> {
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   child: TextMoy(
-                    text: 'Categories',
+                    text: 'Catégories',
                     size: 30,
                   ),
                 )
@@ -91,12 +89,12 @@ class _CategoriePageState extends State<CategoriePage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image(
-                            image: AssetImage('assets/img/publicite.png'), height: 50, width: 50),
+                            image: AssetImage('assets/img/publicite.png'),
+                            height: 50,
+                            width: 50),
                         SizedBox(height: 10),
                         TextMoy(
-                            text: 'Publicités',
-                            color: Colors.blue,
-                            size: 16),
+                            text: 'Publicités', color: Colors.blue, size: 16),
                       ],
                     ),
                   ),
@@ -105,21 +103,29 @@ class _CategoriePageState extends State<CategoriePage> {
                     height: MediaQuery.sizeOf(context).width * 0.40,
                     width: MediaQuery.sizeOf(context).width * 0.40,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.white,
-                        boxShadow: const [
-                          BoxShadow(
-                              blurRadius: 5,
-                              color: Color.fromARGB(255, 236, 235, 235),
-                              spreadRadius: 5)
-                        ]),
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white,
+                      boxShadow: const [
+                        BoxShadow(
+                            blurRadius: 5,
+                            color: Color.fromARGB(255, 236, 235, 235),
+                            spreadRadius: 5)
+                      ],
+                    ),
                     child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image(image: AssetImage('assets/img/sondage.png'), width: 50, height: 50),
+                        Image(
+                            image: AssetImage('assets/img/sondage.png'),
+                            width: 50,
+                            height: 50),
                         SizedBox(height: 10),
-                        TextMoy(
-                            text: 'Sondage', color: Colors.blue, size: 16),
+                        TextMoy(text: 'Sondage', size: 16, color: Colors.blue),
+                        // TextMoy(
+                            // text: 'Participer au sondage de nos annonceur',
+                            // color: Colors.black,
+                            // size: 10,
+                            // textAlign: TextAlign.center),
                       ],
                     ),
                   ),
@@ -136,17 +142,23 @@ class _CategoriePageState extends State<CategoriePage> {
                               color: Color.fromARGB(255, 236, 235, 235),
                               spreadRadius: 5)
                         ]),
-                    child:  Column(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset('assets/img/tester.png', height: 50, width: 50,),
-                        const SizedBox(height: 10),
-                        const TextMoy(
-                          textAlign: TextAlign.center,
-                          text: 'test des application',
-                          size: 16,
-                          color: Colors.blue,
+                        Image.asset(
+                          'assets/img/tester.png',
+                          height: 50,
+                          width: 50,
                         ),
+                        const SizedBox(height: 10),
+                        const TextMoy(text: 'Teste d\'applications', size: 16, color: Colors.blue, textAlign: TextAlign.center,),
+                        // const TextMoy(
+                          // textAlign: TextAlign.center,
+                          // text:
+                              // 'Participer aux testes d\'applications de nos annonceur',
+                          // size: 10,
+                          // color: Colors.blue,
+                        // ),
                       ],
                     ),
                   ),
@@ -154,6 +166,7 @@ class _CategoriePageState extends State<CategoriePage> {
                     alignment: Alignment.center,
                     height: MediaQuery.sizeOf(context).width * 0.40,
                     width: MediaQuery.sizeOf(context).width * 0.40,
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white,
@@ -163,17 +176,19 @@ class _CategoriePageState extends State<CategoriePage> {
                               color: Color.fromARGB(255, 236, 235, 235),
                               spreadRadius: 5)
                         ]),
-                    child:  Column(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset('assets/img/naviguer.png', height: 50, width: 50),
+                        Image.asset('assets/img/naviguer.png',
+                            height: 50, width: 50),
                         const SizedBox(height: 10),
-                        const TextMoy(
-                            textAlign: TextAlign.center,
-                            size: 16,
-                            text: 'Naviguer sur les cites de nos',
-                            color: Colors.blue),
+                        TextMoy(text: 'Navigation sur les sites', size: 16, color: Colors.blue, textAlign: TextAlign.center),
+                        // const TextMoy(
+                            // textAlign: TextAlign.center,
+                            // size: 12,
+                            // text: 'Naviguer sur les sites de nos annonceurs',
+                            // color: Colors.blue),
                       ],
                     ),
                   )
